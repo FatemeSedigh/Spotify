@@ -1,6 +1,7 @@
 package spotify;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Music {
 
@@ -20,6 +21,15 @@ public class Music {
         numberOfStream += 1;
     }
 
+    public static List<Music> search(String title){
+        List<Music> result = new ArrayList<>();
+        for (Music music : allMusics) {
+            if (music.title.equals(title)) {
+                result.add(music);
+            }
+        }
+        return result.isEmpty() ? null : result;
+    }
 
 
 }
