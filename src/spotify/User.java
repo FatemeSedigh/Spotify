@@ -28,6 +28,10 @@ public class User {
         allUsers.add(this);
     }
 
+    private boolean usernameExists(String username) {
+        return allUsers.stream().anyMatch(u -> u.getUsername().equals(username));
+    }
+
 
 
 }
