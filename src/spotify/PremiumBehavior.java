@@ -21,7 +21,7 @@ public class PremiumBehavior implements UserBehavior {
 
     @Override
     public void buyPremium (User owner, int month){
-
+        this.month += month;
     }
 
 
