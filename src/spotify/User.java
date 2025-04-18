@@ -2,6 +2,7 @@ package spotify;
 
 import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
@@ -12,6 +13,31 @@ public class User {
     private UserBehavior behavior;
     private ArrayList<Playlist> playlists = new ArrayList<>();
     private static ArrayList<User> allUsers;
+
+    public String getUsername(){
+        return username;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public List<User> getFollowerList(){
+        return followerList;
+    }
+    public List<User> getFollowingList(){
+        return followingList;
+    }
+    public UserBehavior getBehavior(){
+        return behavior;
+    }
+    public List<Playlist> getPlaylists(){
+        return playlists;
+    }
+    public static List<User> getAllUsers(){
+        return allUsers;
+    }
+    public void setBehavior(UserBehavior behavior){
+        this.behavior = behavior;
+    }
 
     public User(String username, String password){
 
