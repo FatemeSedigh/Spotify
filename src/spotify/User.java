@@ -46,4 +46,8 @@ public class User {
         user.followerList.add(this);
     }
 
+    public void createPlaylist (String Title, ){
+        this.behavior.createPlaylist(Title, this);
+    }
+
 }
