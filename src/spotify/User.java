@@ -50,4 +50,8 @@ public class User {
         this.behavior.createPlaylist(Title, this);
     }
 
+    public void playMusic(Music music) {
+        behavior.playMusic(music);
+    }
+
 }
