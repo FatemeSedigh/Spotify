@@ -5,54 +5,42 @@ import java.util.List;
 import java.util.Random;
 
 public class Playlist {
-
     private String title;
-    private ArrayList<Music> playlist = new ArrayList<>();
+    private List<Music> playlist = new ArrayList<>();
     private User owner;
 
-    public String getTitle(){
-        return title;
-    }
-    public List<Music> getPlaylist(){
-        return playlist;
-    }
-    public User getOwner(){
-        return owner;
-    }
-
-    public Playlist(String title, User owner){
+    public Playlist(String title, User owner) {
         this.title = title;
         this.owner = owner;
     }
 
-    public void editTitle(String newtitle, String password){
+    public void editTitle(String newTitle, String password) {
         if (!owner.getPassword().equals(password)) {
             throw new InvalidOperationException("Invalid password");
         }
-        this.title = newtitle;
+        this.title = newTitle;
     }
 
-    public void addMusic(Music music, String password){
+    public void addMusic(Music music, String password) {
         if (!owner.getPassword().equals(password)) {
             throw new InvalidOperationException("Invalid password");
         }
-        if(playlist.contains(music)){
+        if (playlist.contains(music)) {
             throw new InvalidOperationException("Music already exists in playlist");
         }
         playlist.add(music);
     }
 
-    public void removeMusic(Music music, String password){
+    public void removeMusic(Music music, String password) {
         if (!owner.getPassword().equals(password)) {
             throw new InvalidOperationException("Invalid password");
         }
-        if(!playlist.contains(music)){
+        if (!playlist.remove(music)) {
             throw new InvalidOperationException("Music not found in playlist");
         }
-        playlist.remove(music);
     }
 
-    public List<Music> searchInPlaylist(String title){
+    public List<Music> searchInPlaylist(String title) {
         List<Music> result = new ArrayList<>();
         for (Music music : playlist) {
             if (music.getTitle().equals(title)) {
@@ -62,7 +50,7 @@ public class Playlist {
         return result.isEmpty() ? null : result;
     }
 
-    public Music playPlaylist(String title, User singer){
+    public Music searchInPlaylist(String title, User singer) {
         for (Music music : playlist) {
             if (music.getTitle().equals(title) && music.getSinger().equals(singer)) {
                 return music;
@@ -92,4 +80,8 @@ public class Playlist {
             music.play();
         }
     }
+
+    public String getTitle() { return title; }
+    public List<Music> getPlaylist() { return playlist; }
+    public User getOwner() { return owner; }
 }

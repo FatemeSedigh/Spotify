@@ -1,9 +1,9 @@
 package spotify;
 
-public interface UserBehavior {
+interface UserBehavior {
 
-    void createPlaylist (String Title, User Owner);
-    void playMusic (Music music);
-    void buyPremium (User owner, int month);
+    void createPlaylist(String title, User owner);
+    void playMusic(Music music);
+    void buyPremium(User owner, int month);
 
 }
