@@ -28,6 +28,7 @@ public class Main {
 
         } catch (InvalidOperationException e) {
             System.out.println("Error: " + e.getMessage());
+
         }
     }
 }
