@@ -2,6 +2,7 @@ package spotify;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Playlist {
 
@@ -65,5 +66,22 @@ public class Playlist {
             music.play();
         }
     }
+
+    public void shufflePlaylist() {
+        List<Music> shuffled = new ArrayList<>(playlist);
+        Random rand = new Random();
+
+        for (int i = shuffled.size() - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            Music temp = shuffled.get(i);
+            shuffled.set(i, shuffled.get(j));
+            shuffled.set(j, temp);
+        }
+
+        for (Music music : shuffled) {
+            music.play();
+        }
+    }
+
 
 }
