@@ -1,5 +1,6 @@
 package spotify;
 
+import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 
 public class User {
@@ -11,6 +12,21 @@ public class User {
     private UserBehavior behavior;
     private ArrayList<Playlist> playlists = new ArrayList<>();
     private static ArrayList<User> allUsers;
+
+    public User(String username, String password){
+
+        if(usernameExists(username)){
+            throw new InvalidOperationException("Username already exists");
+        }
+        if (password.length() < 8) {
+            throw new InvalidOperationException("Password must be at least 8 characters");
+        }
+
+        this.username = username;
+        this.password = password;
+        this.behavior = new RegularBehavior();
+        allUsers.add(this);
+    }
 
 
 
