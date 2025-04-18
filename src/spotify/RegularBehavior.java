@@ -5,12 +5,12 @@ public class RegularBehavior implements UserBehavior {
     private int playingLimit = 5;
 
     @Override
-    void createPlaylist (String Title, User Owner){
+    public void createPlaylist (String Title, User Owner){
         throw new InvalidOperationException("Regular users cannot create playlists");
     }
 
     @Override
-    void playMusic (Music music){
+    public void playMusic (Music music){
         if(playingLimit > 0) {
             music.play();
             playingLimit --;
@@ -20,7 +20,7 @@ public class RegularBehavior implements UserBehavior {
     }
 
     @Override
-    void buyPremium (User owner, int month){
+    public void buyPremium (User owner, int month){
         owner.setBehavior(new PremiumBehavior(month));
     }
 }
