@@ -23,6 +23,4 @@ public class PremiumBehavior implements UserBehavior {
     public void buyPremium (User owner, int month){
         this.month += month;
     }
-
-
 }
