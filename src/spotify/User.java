@@ -54,4 +54,9 @@ public class User {
         behavior.playMusic(music);
     }
 
+    public void buyPremium(int month) {
+        behavior.buyPremium(this, month);
+    }
+
+
 }
