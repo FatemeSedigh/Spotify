@@ -16,7 +16,7 @@ public class PremiumBehavior implements UserBehavior {
 
     @Override
     public void playMusic (Music music){
-
+        music.play;
     }
 
     @Override
