@@ -11,7 +11,12 @@ public class RegularBehavior implements UserBehavior {
 
     @Override
     void playMusic (Music music){
-
+        if(playingLimit > 0) {
+            music.play();
+            playingLimit --;
+        } else {
+            throw new InvalidOperationException ("Regular users can only play 5 songs per session");
+        }
     }
 
     @Override
