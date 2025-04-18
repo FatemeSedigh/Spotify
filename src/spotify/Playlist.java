@@ -51,7 +51,14 @@ public class Playlist {
         return result.isEmpty() ? null : result;
     }
 
-
+    public Music playPlaylist(String title, User singer){
+        for (Music music : playlist) {
+            if (music.getTitle().equals(title) && music.getSinger().equals(singer)) {
+                return music;
+            }
+        }
+        return null;
+    }
 
 
 }
