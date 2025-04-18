@@ -20,6 +20,16 @@ public class Playlist {
         this.title = newtitle;
     }
 
+    public void addMusic(Music music, String password){
+        if (!owner.getPassword().equals(password)) {
+            throw new InvalidOperationException("Invalid password");
+        }
+        if(playlist.contains(music)){
+            throw new InvalidOperationException("Music already exists in playlist");
+        }
+        playlist.add(music);
+    }
+
 
 
 }
