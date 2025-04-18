@@ -60,5 +60,10 @@ public class Playlist {
         return null;
     }
 
+    public void playPlaylist() {
+        for (Music music : playlist) {
+            music.play();
+        }
+    }
 
 }
