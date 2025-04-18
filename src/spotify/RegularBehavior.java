@@ -1,4 +1,5 @@
 package spotify;
 
-public class RegularBehavior {
+public class RegularBehavior implements UserBehavior {
+
 }

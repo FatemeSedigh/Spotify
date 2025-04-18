@@ -1,4 +1,5 @@
 package spotify;
 
-public class PremiumBehavior {
+public class PremiumBehavior implements UserBehavior {
+
 }
