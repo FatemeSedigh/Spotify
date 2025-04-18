@@ -1,6 +1,7 @@
 package spotify;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Playlist {
 
@@ -39,6 +40,16 @@ public class Playlist {
         }
         playlist.remove(music);
     }
+
+    public List<Music> searchInPlaylist(String title){
+        List<Music> result = new ArrayList<>();
+        for (Music music : playlist) {
+            if (music.getTitle().equals(title)) {
+                result.add(music);
+            }
+        }
+    }
+
 
 
 
