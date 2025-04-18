@@ -9,17 +9,18 @@ public class PremiumBehavior implements UserBehavior {
     }
 
     @Override
-    void createPlaylist (String Title, User Owner){
+    public void createPlaylist (String Title, User Owner){
+        Playlist playlist = new Playlist(Title, Owner);
+        owner.getPlaylists().add(playlist);
+    }
+
+    @Override
+    public void playMusic (Music music){
 
     }
 
     @Override
-    void playMusic (Music music){
-
-    }
-
-    @Override
-    void buyPremium (User owner, int month){
+    public void buyPremium (User owner, int month){
 
     }
 
