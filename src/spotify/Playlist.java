@@ -48,6 +48,7 @@ public class Playlist {
                 result.add(music);
             }
         }
+        return result.isEmpty() ? null : result;
     }
 
 
