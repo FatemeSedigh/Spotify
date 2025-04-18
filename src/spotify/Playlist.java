@@ -30,6 +30,16 @@ public class Playlist {
         playlist.add(music);
     }
 
+    public void removeMusic(Music music, String password){
+        if (!owner.getPassword().equals(password)) {
+            throw new InvalidOperationException("Invalid password");
+        }
+        if(!playlist.contains(music)){
+            throw new InvalidOperationException("Music not found in playlist");
+        }
+        playlist.remove(music);
+    }
+
 
 
 }
