@@ -57,6 +57,4 @@ public class User {
     public void buyPremium(int month) {
         behavior.buyPremium(this, month);
     }
-
-
 }
