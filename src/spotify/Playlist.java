@@ -10,6 +10,16 @@ public class Playlist {
     private ArrayList<Music> playlist = new ArrayList<>();
     private User owner;
 
+    public String getTitle(){
+        return title;
+    }
+    public List<Music> getPlaylist(){
+        return playlist;
+    }
+    public User getOwner(){
+        return owner;
+    }
+
     public Playlist(String title, User owner){
         this.title = title;
         this.owner = owner;
@@ -82,6 +92,4 @@ public class Playlist {
             music.play();
         }
     }
-
-
 }
