@@ -15,4 +15,11 @@ public class Music {
         allMusics.add(this);
     }
 
+    public void play(){
+        System.out.println("Now playing: \" + title + \" by \" + singer.getUsername()");
+        numberOfStream += 1;
+    }
+
+
+
 }
