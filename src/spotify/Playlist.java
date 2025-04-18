@@ -13,4 +13,13 @@ public class Playlist {
         this.owner = owner;
     }
 
+    public void editTitle(String newtitle, String password){
+        if (!owner.getPassword().equals(password)) {
+            throw new InvalidOperationException("Invalid password");
+        }
+        this.title = newtitle;
+    }
+
+
+
 }
