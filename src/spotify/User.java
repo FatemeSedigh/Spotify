@@ -32,6 +32,18 @@ public class User {
         return allUsers.stream().anyMatch(u -> u.getUsername().equals(username));
     }
 
+    public void follow (User user){
 
+        if(user == this){
+            throw new InvalidOperationException("Cannot follow yourself");
+        }
+
+        if(followingList.contains(user)){
+            throw new InvalidOperationException("Already following this user");
+        }
+
+        followingList.add(user);
+        user.followerList.add(this);
+    }
 
 }
