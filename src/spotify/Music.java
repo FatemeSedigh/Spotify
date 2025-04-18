@@ -31,5 +31,14 @@ public class Music {
         return result.isEmpty() ? null : result;
     }
 
+    public static List<Music> search(String title, String singer){
+        for (Music music : allMusics) {
+            if (music.title.equals(title) && music.singer.equals(singer)) {
+                return music;
+            }
+        }
+        return null;
+    }
+
 
 }
